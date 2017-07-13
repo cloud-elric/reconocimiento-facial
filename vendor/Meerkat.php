@@ -13,6 +13,7 @@ class Meerkat{
     }
 
     public function guardarUsuario($urlImage, $label){
+
         $apiUrl = 'train/person';
         $params['body'] = ['imageUrl'=>$urlImage, 'label'=>$label];
         return $this->curlPost(self::URL_API.$apiUrl, $params);
@@ -27,7 +28,7 @@ class Meerkat{
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->$api_key]);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->api_key]);
 
         $content = curl_exec($ch);
 
@@ -44,7 +45,7 @@ class Meerkat{
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
 
-       curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->$api_key]);
+       curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->api_key]);
 
         $content = curl_exec($ch);
 
