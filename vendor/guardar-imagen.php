@@ -18,7 +18,7 @@ if(isset($_POST['imgBase64'])){
         // if (!empty($headers)) {
         //     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         // }
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: 81846eb7d66fd8e421c9f474fff89535']);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key: 81846eb7d66fd8e421c9f474fff89535']);
 
         $content = curl_exec($ch);
 
