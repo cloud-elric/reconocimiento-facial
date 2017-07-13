@@ -14,6 +14,6 @@ if(isset($_POST['imgBase64'])){
     $urlImage = $baseUrl.'imagenes/'.$idFoto . '.png';
 
     $meerkatApi = new Meerkat($apiKey);
-    $meerkatApi->guardarUsuario($urlImage, "Humberto");
+    echo $meerkatApi->guardarUsuario($urlImage, "Humberto");
 }
 

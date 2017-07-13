@@ -15,7 +15,7 @@ class Meerkat{
     public function guardarUsuario($urlImage, $label){
 
         $apiUrl = 'train/person';
-        $params['body'] = ['imageUrl'=>$urlImage, 'label'=>$label];
+        $params= ['imageUrl'=>$urlImage, 'label'=>$label];
         return $this->curlPost(self::URL_API.$apiUrl, $params);
     }
 
