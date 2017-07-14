@@ -183,6 +183,11 @@
                                     imgBase64: dataURL,
                                 },
                                 
+                                success:function(resp){
+                                    if(resp.txt_token){
+                                        swal("Ok", "Hola "+resp.txt_nombre_completo+"<img src='<?=imagenes?>/"+resp.txt_token+".png'>", "success");
+                                    }
+                                }
                                 }).done(function(o) {
                                 timesButton = 0;
                                 
