@@ -192,7 +192,7 @@
                                 timesButton = 0;
                                 
                                 $("#photo").attr('src', '');
-                                swal("Ok", "Imagen guardada", "success");
+                                
                                 $("#opcion-tomar-foto").trigger('click');
                                 l.stop();
                                 console.log('saved'); 
