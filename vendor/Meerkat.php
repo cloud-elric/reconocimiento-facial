@@ -25,7 +25,7 @@ class Meerkat{
 
     private function curlGet($url){
         $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_HEADER, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->api_key]);
@@ -43,9 +43,9 @@ class Meerkat{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($parameters));
 
-       curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->api_key]);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->api_key,'Content-Type: application/json',]);
 
         $content = curl_exec($ch);
 
@@ -54,3 +54,4 @@ class Meerkat{
         return $content;
     }
 }
+      
