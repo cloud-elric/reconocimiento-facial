@@ -36,13 +36,7 @@
                             <img style="width:100%;"  id="photo" alt="photo">    
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo">
-                            </div>
-                        </div>
-                    </div>
+                   
                     <br>
                     <br>
                     <div class="row">
@@ -60,13 +54,12 @@
                         $("#btn-guardar").on("click", function(){
                             var canvas = document.getElementById('canvas');
                             var dataURL = canvas.toDataURL();
-                            var nombre = $("#nombre").val();
+                            
                             $.ajax({
                                 type: "POST",
-                                url: "vendor/guardar-imagen.php",
+                                url: "vendor/recuperar-persona.php",
                                 data: { 
                                     imgBase64: dataURL,
-                                    nombre: nombre
                                 },
                                 
                                 }).done(function(o) {
