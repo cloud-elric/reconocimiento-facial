@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #263238;
+    border-color: #263238;
+    border-radius: 0px;
+}
+
+.navbar .navbar-brand, .navbar .navbar-brand:hover{
+    color:white;
+}
+
+.btn-block{
+    /* height: 20px; */
+}
