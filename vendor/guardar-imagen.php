@@ -18,11 +18,12 @@ if(isset($_POST['imgBase64']) && isset($_POST['nombre'])){
     $urlImage = $baseUrl.'imagenes/'.$idFoto . '.png';
 
     $conexionBaseDatos = new Conexion();
+    $conexion = $conexionBaseDatos->openConexion();
 
     $funciones = new FuncionesBaseDatos();
-    if($funciones->guardarUsuario($conexionBaseDatos, $nombre, $idFoto)){
+    if($funciones->guardarUsuario($conexion, $nombre, $idFoto)){
          $meerkatApi = new Meerkat($apiKey);
-        echo $meerkatApi->guardarUsuario($urlImage, $nombre);
+        echo $meerkatApi->guardarUsuario($urlImage, $idFoto);
     }else{
         
     }
