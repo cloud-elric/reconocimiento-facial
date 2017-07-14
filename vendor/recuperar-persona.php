@@ -24,7 +24,13 @@ if(isset($_POST['imgBase64'])){
     $meerkatApi = new Meerkat($apiKey);
     $resultado = json_decode ( $meerkatApi->reconocerUsuario($urlImage, $nombre));
 
-    print_r($resultado);
+    
+    if($resultado['people']){
+        $token = $resultado['people']['recognition']['predictedLabel'];
+        if($usuario = $funciones->getUsuario($conexion, $token)){
+            print_r($usuario);
+         }
+    };
 
     // if($funciones->getUsuario($conexion, )){
     
