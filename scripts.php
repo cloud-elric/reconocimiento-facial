@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://t4t5.github.io/sweetalert/dist/sweetalert.css">
-<link rel="stylesheet" href="https://msurguy.github.io/ladda-bootstrap/dist/ladda-themeless.min.css">
+<link rel="stylesheet" href="css/ladda.css">
 <link rel="stylesheet" href="css/site.css">
 
 <script
@@ -10,7 +10,7 @@
 <script
   src="http://t4t5.github.io/sweetalert/dist/sweetalert-dev.js"></script>
 <script
-  src="https://msurguy.github.io/ladda-bootstrap/dist/spin.min.js"></script>   
+  src="js/spin.js"></script>   
 <script
-  src="https://msurguy.github.io/ladda-bootstrap/dist/ladda.min.js"></script> 
+  src="js/ladda.min.js"></script> 
 
