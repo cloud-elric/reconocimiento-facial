@@ -1,8 +1,8 @@
 <?php
 include("configuracion.php");
 include("Meerkat.php");
-include("conexion/Conexion.php");
-include("conexion/FuncionesBaseDatos.php");
+include("../conexion/Conexion.php");
+include("../conexion/FuncionesBaseDatos.php");
 
 if(isset($_POST['imgBase64']) && isset($_POST['nombre'])){
     $data = $_POST['imgBase64'];
