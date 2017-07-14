@@ -15,6 +15,6 @@ if(isset($_POST['imgBase64'])){
     $urlImage = $baseUrl.'imagenes-comparar/'.$idFoto . '.png';
 
     $meerkatApi = new Meerkat($apiKey);
-    echo $meerkatApi->guardarUsuario($urlImage, $nombre);
+    echo $meerkatApi->reconocerUsuario($urlImage, $nombre);
 }
 

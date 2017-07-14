@@ -27,7 +27,7 @@ class Meerkat{
 
     private function curlGet($url){
         $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_HEADER, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['api-key:'.$this->api_key,'Content-Type: application/json',]);
