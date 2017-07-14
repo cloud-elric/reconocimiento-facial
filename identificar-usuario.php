@@ -197,7 +197,7 @@
                                 // and than put the image in your browser.
                                 });
                         });
-                    });
+                
 
                      $("#btn-guardar2").on("click", function(){
                             var canvas = $("#photo2");
