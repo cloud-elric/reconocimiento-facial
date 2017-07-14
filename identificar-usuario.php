@@ -203,7 +203,7 @@
                             var canvas = $("#photo2");
                             var dataURL = canvas.attr('src');
 
-                            if( document.getElementById("photo2").files.length == 0 ){
+                            if( document.getElementById("input-subir-imagen").files.length == 0 ){
                                 swal("Espera", "Debes subir una foto", "warning");
                                 return false;
                             }

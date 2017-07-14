@@ -235,7 +235,7 @@
                                 return false;
                             }
 
-                            if( document.getElementById("photo2").files.length == 0 ){
+                            if( document.getElementById("input-subir-imagen").files.length == 0 ){
                                 swal("Espera", "Debes subir una foto", "warning");
                                 return false;
                             }
@@ -267,7 +267,7 @@
                                 // and than put the image in your browser.
                                 });
                         });
-                    });
+                    
 
 
                         ;(function(){
