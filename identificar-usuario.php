@@ -219,12 +219,16 @@
                                     imgBase64: dataURL,
                                     
                                 },
-                                
+                                success:function(resp){
+                                    if(resp.txt_token){
+                                        swal("Ok", "Hola "+resp.txt_nombre_completo+"<img src='<?=imagenes?>/"+resp.txt_token+".png'>", "success");
+                                    }
+                                }
                                 }).done(function(o) {
                                 timesButton = 0;
                                 
                                 $("#photo2").attr('src', '');
-                                swal("Ok", "Imagen guardada", "success");
+                                
                                 $("#opcion-subir-foto").trigger('click');
                                 $("#input-subir-imagen").val('');
                                 l.stop();

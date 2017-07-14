@@ -23,14 +23,23 @@ if(isset($_POST['imgBase64'])){
 
     $meerkatApi = new Meerkat($apiKey);
     $resultado = json_decode ( $meerkatApi->reconocerUsuario($urlImage, $nombre));
-
+    $usuario = false;
     
-    if($resultado['people']){
-        $token = $resultado['people']['recognition']['predictedLabel'];
-        if($usuario = $funciones->getUsuario($conexion, $token)){
-            print_r($usuario);
-         }
-    };
+    foreach($resultado as $persona){
+        if(!$usuario){
+            foreach($persona as $datos){
+                $token = $datos->recognition->predictedLabel;
+                $usuario = true;
+
+                if($usuario = $funciones->getUsuario($conexion, $token)){
+                    echo json_encode($usuario);
+                }
+            }
+        } 
+    }
+
+    exit;
+   
 
     // if($funciones->getUsuario($conexion, )){
     
