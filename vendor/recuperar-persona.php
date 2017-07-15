@@ -24,7 +24,7 @@ if(isset($_POST['imgBase64'])){
     $meerkatApi = new Meerkat($apiKey);
     $resultado = json_decode ( $meerkatApi->reconocerUsuario($urlImage, $nombre));
     $usuario = false;
-    
+    header('Content-Type: application/json');
     foreach($resultado as $persona){
         if(!$usuario){
             foreach($persona as $datos){

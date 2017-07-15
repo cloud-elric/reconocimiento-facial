@@ -192,7 +192,19 @@
                                         $("#nombre-usuario").text(resp.txt_nombre_completo);
                                         $("#imagen-encontrada").attr("src", "imagenes/"+resp.txt_token+".png");
 
+                                    }else{
+                                        timesButton = 0;
+                                
+                                        $("#photo2").attr('src', '');
+                                        
+                                        $("#opcion-subir-foto").trigger('click');
+                                        $("#input-subir-imagen").val('');
+                                        l.stop();   
+
+                                        swan("Sin datos", "No se encontro una persona aproximada", "warning");
                                     }
+                                }, error:function(){
+                                    swan("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
                                 }
                                 }).done(function(o) {
                                 timesButton = 0;
@@ -236,6 +248,16 @@
                                         $('#myModal').modal('show');
                                         $("#nombre-usuario").text(resp.txt_nombre_completo);
                                         $("#imagen-encontrada").attr("src", "imagenes/"+resp.txt_token+".png");
+                                    }else{
+                                        timesButton = 0;
+                                
+                                        $("#photo2").attr('src', '');
+                                        
+                                        $("#opcion-subir-foto").trigger('click');
+                                        $("#input-subir-imagen").val('');
+                                        l.stop();   
+
+                                        swan("Sin datos", "No se encontro una persona aproximada", "warning");
                                     }
                                 }
                                 }).done(function(o) {
@@ -326,8 +348,8 @@
                 </div>
                 <div class="modal-body">
 
-                <h5 id="nombre-usuario"></h5>
-                    <img id="imagen-encontrada" />
+                <h5>Hola <span  id="nombre-usuario"></span></h5>
+                    <img style="width=100%;" id="imagen-encontrada" />
                 </div>
                 
                 </div>
