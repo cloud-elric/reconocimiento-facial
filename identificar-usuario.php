@@ -184,8 +184,14 @@
                                 },
                                 
                                 success:function(resp){
+                                    console.log(resp);
+                                    
                                     if(resp.txt_token){
-                                        swal("Ok", "Hola "+resp.txt_nombre_completo+"<img src='<?=imagenes?>/"+resp.txt_token+".png'>", "success");
+
+                                        $('#myModal').modal('show');
+                                        $("#nombre-usuario").text(resp.txt_nombre_completo);
+                                        $("#imagen-encontrada").attr("src", "imagenes/"+resp.txt_token+".png");
+
                                     }
                                 }
                                 }).done(function(o) {
@@ -225,8 +231,11 @@
                                     
                                 },
                                 success:function(resp){
+                                    console.log(resp);
                                     if(resp.txt_token){
-                                        swal("Ok", "Hola "+resp.txt_nombre_completo+"<img src='<?=imagenes?>/"+resp.txt_token+".png'>", "success");
+                                        $('#myModal').modal('show');
+                                        $("#nombre-usuario").text(resp.txt_nombre_completo);
+                                        $("#imagen-encontrada").attr("src", "imagenes/"+resp.txt_token+".png");
                                     }
                                 }
                                 }).done(function(o) {
@@ -286,10 +295,7 @@
                                 // Listen for user click on the "take a photo" button
                                 document.getElementById('take').addEventListener('click', function(){
 
-                                    if( $('#nombre').val().length === 0 ) {
-                                         swal("Espera", "Debes ingresar tu nombre", "warning");
-                                        return false;
-                                    }
+                                   
 
                                     if (videoPlaying){
                                         var canvas = document.getElementById('canvas');
@@ -309,6 +315,24 @@
                             }
                         })();
                     </script>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Resultado</h4>
+                </div>
+                <div class="modal-body">
+
+                <h5 id="nombre-usuario"></h5>
+                    <img id="imagen-encontrada" />
+                </div>
+                
+                </div>
+            </div>
+        </div>
 
     </body>
 
