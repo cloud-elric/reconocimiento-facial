@@ -201,10 +201,10 @@
                                         $("#input-subir-imagen").val('');
                                         l.stop();   
 
-                                        swan("Sin datos", "No se encontro una persona aproximada", "warning");
+                                        swal("Sin datos", "No se encontro una persona aproximada", "warning");
                                     }
                                 }, error:function(){
-                                    swan("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
+                                    swal("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
                                 }
                                 }).done(function(o) {
                                 timesButton = 0;
@@ -257,8 +257,10 @@
                                         $("#input-subir-imagen").val('');
                                         l.stop();   
 
-                                        swan("Sin datos", "No se encontro una persona aproximada", "warning");
+                                        swal("Sin datos", "No se encontro una persona aproximada", "warning");
                                     }
+                                }, error:function(){
+                                    swal("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
                                 }
                                 }).done(function(o) {
                                 timesButton = 0;
