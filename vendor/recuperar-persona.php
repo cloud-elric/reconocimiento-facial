@@ -25,18 +25,20 @@ if(isset($_POST['imgBase64'])){
     $resultado = json_decode ( $meerkatApi->reconocerUsuario($urlImage, $nombre));
     $usuario = false;
     header('Content-Type: application/json');
+    $usuarioEncontrado['status'] = "No encontrado";
     foreach($resultado as $persona){
         if(!$usuario){
             foreach($persona as $datos){
                 $token = $datos->recognition->predictedLabel;
                 $usuario = true;
 
-                if($usuario = $funciones->getUsuario($conexion, $token)){
-                    echo json_encode($usuario);
-                }
+                $usuarioEncontrado = $funciones->getUsuario($conexion, $token);
+                    
+                
             }
         } 
     }
+    echo json_encode($usuarioEncontrado);
 
     exit;
    

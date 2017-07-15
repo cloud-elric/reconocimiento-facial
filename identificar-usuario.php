@@ -58,7 +58,7 @@
                                     <div class="col-md-12 text-center">
                                         <button data-style="zoom-in" id="btn-guardar" class="btn btn-success btn-block ladda-button">
                                             <span class="ladda-label">    
-                                                Guardar foto
+                                                Identificar usuario
                                             </span>    
                                         </button>
                                     </div>
@@ -97,7 +97,7 @@
                                     <div class="col-md-12 text-center">
                                         <button data-style="zoom-in" id="btn-guardar2" class="btn btn-success btn-block ladda-button">
                                             <span class="ladda-label">    
-                                                Guardar foto
+                                                Identificar usuario
                                             </span>    
                                         </button>
                                     </div>
@@ -205,6 +205,7 @@
                                     }
                                 }, error:function(){
                                     swal("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
+                                    l.stop();  
                                 }
                                 }).done(function(o) {
                                 timesButton = 0;
@@ -261,6 +262,7 @@
                                     }
                                 }, error:function(){
                                     swal("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
+                                    l.stop(); 
                                 }
                                 }).done(function(o) {
                                 timesButton = 0;
