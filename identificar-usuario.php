@@ -193,32 +193,20 @@
                                         $("#imagen-encontrada").attr("src", "imagenes/"+resp.txt_token+".png");
 
                                     }else{
-                                        timesButton = 0;
-                                
-                                        $("#photo2").attr('src', '');
-                                        
-                                        $("#opcion-subir-foto").trigger('click');
-                                        $("#input-subir-imagen").val('');
-                                        l.stop();   
-
                                         swal("Sin datos", "No se encontro una persona aproximada", "warning");
                                     }
+                                    
+                                    timesButton = 0;
+
+                                    $("#photo").attr('src', '');
+                                
+                                    $("#opcion-tomar-foto").trigger('click');
+                                    l.stop();
+
                                 }, error:function(){
                                     swal("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
                                     l.stop();  
                                 }
-                                }).done(function(o) {
-                                timesButton = 0;
-                                
-                                $("#photo").attr('src', '');
-                                
-                                $("#opcion-tomar-foto").trigger('click');
-                                l.stop();
-                                console.log('saved'); 
-                                // If you want the file to be visible in the browser 
-                                // - please modify the callback in javascript. All you
-                                // need is to return the url to the file, you just saved 
-                                // and than put the image in your browser.
                                 });
                         });
                 
@@ -250,33 +238,21 @@
                                         $("#nombre-usuario").text(resp.txt_nombre_completo);
                                         $("#imagen-encontrada").attr("src", "imagenes/"+resp.txt_token+".png");
                                     }else{
-                                        timesButton = 0;
+
+                                        swal("Sin datos", "No se encontro una persona aproximada", "warning");
+                                    }
+
+                                    timesButton = 0;
                                 
                                         $("#photo2").attr('src', '');
                                         
                                         $("#opcion-subir-foto").trigger('click');
                                         $("#input-subir-imagen").val('');
                                         l.stop();   
-
-                                        swal("Sin datos", "No se encontro una persona aproximada", "warning");
-                                    }
                                 }, error:function(){
                                     swal("Lo sentimos", "Ocurrio un suceso inesperado.", "warning");
                                     l.stop(); 
                                 }
-                                }).done(function(o) {
-                                timesButton = 0;
-                                
-                                $("#photo2").attr('src', '');
-                                
-                                $("#opcion-subir-foto").trigger('click');
-                                $("#input-subir-imagen").val('');
-                                l.stop();
-                                console.log('saved'); 
-                                // If you want the file to be visible in the browser 
-                                // - please modify the callback in javascript. All you
-                                // need is to return the url to the file, you just saved 
-                                // and than put the image in your browser.
                                 });
                         });
                     });
