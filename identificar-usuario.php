@@ -329,7 +329,7 @@
                 <div class="modal-body">
 
                 <h5>Hola <span  id="nombre-usuario"></span></h5>
-                    <img style="width=100%;" id="imagen-encontrada" />
+                    <img style="width:100%;" id="imagen-encontrada" />
                 </div>
                 
                 </div>

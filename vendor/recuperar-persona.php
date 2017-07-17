@@ -26,6 +26,8 @@ if(isset($_POST['imgBase64'])){
     $usuario = false;
     header('Content-Type: application/json');
     $usuarioEncontrado['status'] = "No encontrado";
+
+    
     foreach($resultado as $persona){
         if(!$usuario){
             foreach($persona as $datos){

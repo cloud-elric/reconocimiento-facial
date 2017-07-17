@@ -19,7 +19,7 @@
                 <a href="cargar-foto.php" class="btn btn-primary btn-block">
                     <h3>
                         <span class="glyphicon glyphicon-open" aria-hidden="true"></span> 
-                        Cargar imagen
+                        Subir usuario
                     </h3>
                 </a>
             </div>
